@@ -6,7 +6,7 @@ import os
 
 API_TOKEN = os.environ.get("API_TOKEN", "")
 
-URL = 'https://www.anekdot.ru/last/non_burning/'
+URL = 'https://www.anekdot.ru/last/'
 def parser(url):
     r = requests.get(url)
     soup = bs(r.text, 'html.parser')
@@ -25,7 +25,6 @@ async def send_welcome(message: types.Message):
     #This handler will be called when user sends `/start` or `/help` command
     
     await message.reply("Клоун на месте!")
-
 
 @dp.message_handler(lambda message: message.text == 'Анекдот')
 async def anekdot(message: types.Message):
