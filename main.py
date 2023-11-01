@@ -6,7 +6,7 @@ import os
 
 API_TOKEN = os.environ.get("API_TOKEN", "")
 
-URL = 'https://www.anekdot.ru/last/'
+URL = 'https://www.anekdot.ru/last/anekdot/'
 def parser(url):
     r = requests.get(url)
     soup = bs(r.text, 'html.parser')
